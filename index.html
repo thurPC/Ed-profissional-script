@@ -114,6 +114,62 @@ border-radius:8px;
 font-family:sans-serif;
 }
 
+.menu{
+text-align:center;
+margin-top:10px;
+}
+
+.menu-btn{
+
+width:220px;
+padding:12px;
+
+background:#111;
+color:white;
+
+border:1px solid #333;
+border-radius:8px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+cursor:pointer;
+
+}
+
+/* submenu escondido */
+
+.submenu{
+
+display:none;
+flex-direction:column;
+margin-top:8px;
+
+}
+
+/* botoes dentro */
+
+.btn-sub{
+
+display:block;
+
+background:#1a1a1a;
+color:white;
+
+padding:10px;
+margin:5px 0;
+
+border-radius:6px;
+text-decoration:none;
+
+}
+
+/* animação da seta */
+
+#seta{
+transition:0.3s;
+}  
 /* botao destaque */
 
 .btn.main{
@@ -152,7 +208,22 @@ color:#c084fc;
 
 <a class="btn" href="#">COPIAR SCRIPT</a>
 
-<a class="btn" href="#">TUTORIAL</a>
+<div class="menu">
+
+<button class="menu-btn" onclick="toggleMenu()">
+<span>Tutoriais</span>
+<span id="seta">▶</span>
+</button>
+
+<div id="submenu" class="submenu">
+
+<a href="#" class="btn-sub">Tutorial 1</a>
+<a href="#" class="btn-sub">Tutorial 2</a>
+<a href="#" class="btn-sub">Tutorial 3</a>
+
+</div>
+
+</div>
 
 <a class="btn" href="https://discord.gg/d4eJTDYVC" target="_blank">
 discord.gg/Baguncinha
