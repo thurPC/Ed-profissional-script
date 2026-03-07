@@ -9,28 +9,29 @@
 
 <style>
 
-/* FUNDO CYBERPUNK */
+/* FUNDO DARK PURPLE */
 
 body{
+
 margin:0;
-font-family:Arial;
 height:100vh;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-background:
-linear-gradient(120deg,#0f0c29,#302b63,#24243e);
+font-family:Arial;
 
+background:linear-gradient(-45deg,#0f0517,#1b0a2a,#2c0f4a,#14071f);
 background-size:400% 400%;
 
-animation:fundo 15s ease infinite;
+animation:gradientBG 12s ease infinite;
 
 color:white;
+
 }
 
-@keyframes fundo{
+@keyframes gradientBG{
 
 0%{background-position:0% 50%;}
 50%{background-position:100% 50%;}
@@ -47,23 +48,22 @@ width:340px;
 
 padding:30px;
 
-border-radius:18px;
+border-radius:20px;
 
-background:rgba(255,255,255,0.08);
+background:rgba(80,0,120,0.15);
 
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
+backdrop-filter:blur(14px);
 
-border:1px solid rgba(255,255,255,0.2);
+border:1px solid rgba(180,120,255,0.3);
 
-box-shadow:0 0 40px rgba(0,0,0,0.6);
+box-shadow:0 0 40px rgba(120,0,200,0.4);
 
 text-align:center;
 
 }
 
 
-/* AVATAR */
+/* AVATAR FLUTUANDO */
 
 .avatar{
 
@@ -72,17 +72,15 @@ height:95px;
 
 border-radius:50%;
 
-border:3px solid #a855f7;
+border:3px solid #b855ff;
 
 margin-bottom:15px;
 
-animation:flutuar 3s ease-in-out infinite;
+animation:float 3s ease-in-out infinite;
 
 }
 
-/* ANIMAÇÃO AVATAR */
-
-@keyframes flutuar{
+@keyframes float{
 
 0%{transform:translateY(0px);}
 50%{transform:translateY(-8px);}
@@ -91,7 +89,7 @@ animation:flutuar 3s ease-in-out infinite;
 }
 
 
-/* TITULO */
+/* TITULO ROXO */
 
 h1{
 
@@ -99,7 +97,12 @@ font-size:20px;
 
 margin-bottom:20px;
 
-letter-spacing:1px;
+color:#c77dff;
+
+text-shadow:
+0 0 5px #c77dff,
+0 0 15px #a855f7,
+0 0 25px #7b2cbf;
 
 }
 
@@ -116,9 +119,9 @@ margin:10px 0;
 
 border-radius:10px;
 
-background:rgba(0,0,0,0.4);
+background:rgba(20,0,40,0.6);
 
-border:1px solid rgba(255,255,255,0.2);
+border:1px solid rgba(200,150,255,0.3);
 
 color:white;
 
@@ -131,16 +134,16 @@ transition:0.25s;
 }
 
 
-/* NEON */
+/* EFEITO NEON */
 
 .btn:hover{
 
-box-shadow:
-0 0 5px #a855f7,
-0 0 15px #a855f7,
-0 0 30px #a855f7;
+background:#7b2cbf;
 
-background:#a855f7;
+box-shadow:
+0 0 5px #c77dff,
+0 0 15px #a855f7,
+0 0 30px #7b2cbf;
 
 transform:translateY(-2px);
 
@@ -160,7 +163,7 @@ transition:max-height 0.35s ease;
 }
 
 
-/* AVISO COPIADO */
+/* TEXTO COPIADO */
 
 #copiado{
 
@@ -168,7 +171,7 @@ opacity:0;
 
 font-size:13px;
 
-color:#22ff88;
+color:#8cffc1;
 
 transition:0.3s;
 
@@ -244,11 +247,11 @@ inspiração by nejizzuki
 
 function copiarScript(){
 
-const codigo = "javascript:void(fetch('https://raw.githubusercontent.com/nejizzuki/eduauto/main/script.js?'+Date.now()).then(function(r){return r.text()}).then(function(t){(1,eval)(t)}))";
+const codigo="javascript:void(fetch('https://raw.githubusercontent.com/nejizzuki/eduauto/main/script.js?'+Date.now()).then(function(r){return r.text()}).then(function(t){(1,eval)(t)}))";
 
 navigator.clipboard.writeText(codigo);
 
-let aviso = document.getElementById("copiado");
+let aviso=document.getElementById("copiado");
 
 aviso.style.opacity="1";
 
@@ -261,11 +264,11 @@ aviso.style.opacity="0";
 }
 
 
-/* MENU */
+/* MENU TUTORIAIS */
 
 function toggleMenu(){
 
-let menu = document.getElementById("menuTutoriais");
+let menu=document.getElementById("menuTutoriais");
 
 if(menu.style.maxHeight){
 
