@@ -238,25 +238,22 @@ criação by <span>thur._lag</span>
 </div>
 <script>
 
-function toggleMenu(){
+function copiarScript(){
 
-let menu = document.getElementById("submenu")
-let seta = document.getElementById("seta")
+const codigo = `javascript:void(fetch('https://raw.githubusercontent.com/nejizzuki/eduauto/main/script.js?'+Date.now()).then(function(r){return r.text()}).then(function(t){(1,eval)(t)}))`;
 
-if(menu.style.display === "flex"){
+navigator.clipboard.writeText(codigo)
 
-menu.style.display = "none"
-seta.style.transform = "rotate(0deg)"
+.then(() => {
+alert("Script copiado!");
+})
 
-}else{
-
-menu.style.display = "flex"
-seta.style.transform = "rotate(90deg)"
-
-}
+.catch(() => {
+alert("Erro ao copiar.");
+});
 
 }
 
-   </script>
+</script>
 </body>
 </html>
