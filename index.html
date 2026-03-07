@@ -23,15 +23,16 @@ height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
+
 background:
-url("https://cdn.discordapp.com/attachments/1476537815813853358/1479852669320433815/9dd284942c77f167018ae31a525d9bac.gif?ex=69ad8bb2&is=69ac3a32&hm=c3f9e5f828bb7f56258fe7d11e1d8cac490179577e451e13c8db503cf56bf94c&1") center/cover no-repeat,
-#050505;
-background:#050505;
+linear-gradient(rgba(5,5,5,0.85), rgba(5,5,5,0.85)),
+url("https://cdn.discordapp.com/attachments/1476537815813853358/1479852669320433815/9dd284942c77f167018ae31a525d9bac.gif") center/cover no-repeat;
+
 color:white;
 overflow:hidden;
 }
 
-/* fundo animado */
+/* fundo animado roxo */
 
 body::before{
 content:"";
@@ -63,6 +64,7 @@ border:1px solid #8b5cf620;
 backdrop-filter:blur(10px);
 box-shadow:0 0 30px #000;
 text-align:center;
+z-index:2;
 }
 
 /* avatar */
@@ -108,24 +110,26 @@ box-shadow:0 0 15px #a855f7;
 transform:translateY(-2px);
 }
 
-.discord-btn{
-color:white;
-text-decoration:none;
-background:#5865F2;
-padding:10px 20px;
-border-radius:8px;
-font-family:sans-serif;
+/* botao destaque */
+
+.btn.main{
+background:#a855f7;
 }
+
+.btn.main:hover{
+box-shadow:0 0 20px #a855f7;
+}
+
+/* menu */
 
 .menu{
-text-align:center;
-margin-top:15px;
+margin-top:10px;
 }
 
+/* botao tutoriais */
+
 .menu-btn{
-display:block;
-margin:12px 0;
-width:220px;
+width:100%;
 padding:14px;
 
 background:#0e0e0e;
@@ -139,29 +143,25 @@ justify-content:space-between;
 align-items:center;
 
 cursor:pointer;
-
+transition:.25s;
 }
 
-/* submenu escondido */
+.menu-btn:hover{
+border-color:#a855f7;
+box-shadow:0 0 10px #a855f7;
+}
 
-.submenu{
+/* submenu */
 
 .submenu{
 display:none;
 flex-direction:column;
 margin-top:5px;
-align-items:center;
 }
 
-/* botoes dentro */
+/* botoes internos */
 
 .btn-sub{
-width:200px;
-text-align:center;
-}
-
-display:block;
-
 background:#1a1a1a;
 color:white;
 
@@ -171,28 +171,23 @@ margin:5px 0;
 border-radius:6px;
 text-decoration:none;
 
+transition:.2s;
+}
+
+.btn-sub:hover{
+background:#2a2a2a;
 }
 
 /* animação da seta */
 
 #seta{
-transition:0.3s;
-}  
-/* botao destaque */
-
-.btn.main{
-background:#a855f7;
-color:white;
-}
-
-.btn.main:hover{
-box-shadow:0 0 20px #a855f7;
+transition:.3s;
 }
 
 /* footer */
 
 .footer{
-margin-top:25px;
+margin-top:20px;
 font-size:10px;
 opacity:.6;
 }
@@ -225,7 +220,7 @@ color:#c084fc;
 
 <div id="submenu" class="submenu">
 
-<a href="#" class="btn-sub">android</a>
+<a href="#" class="btn-sub">Android</a>
 <a href="#" class="btn-sub">IOS</a>
 <a href="#" class="btn-sub">PC (logo logo)</a>
 
@@ -240,9 +235,13 @@ discord.gg/Baguncinha
 <div class="footer">
 criação by <span>thur._lag</span>
 </div>
+
 <div class="footer">
-  inspiração by <span>nejizzuki</span>
+inspiração by <span>nejizzuki</span>
 </div>
+
+</div>
+
 <script>
 
 function toggleMenu(){
@@ -264,6 +263,7 @@ seta.style.transform = "rotate(90deg)"
 
 }
 
-   </script>
+</script>
+
 </body>
 </html>
