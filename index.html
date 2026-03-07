@@ -9,35 +9,54 @@
 
 <style>
 
-/* BODY */
+/* FUNDO CYBERPUNK */
 
 body{
 margin:0;
-background:#0e0e0e;
-font-family:Arial, sans-serif;
+font-family:Arial;
+height:100vh;
 
 display:flex;
 justify-content:center;
 align-items:center;
 
-height:100vh;
+background:
+linear-gradient(120deg,#0f0c29,#302b63,#24243e);
+
+background-size:400% 400%;
+
+animation:fundo 15s ease infinite;
+
 color:white;
 }
 
+@keyframes fundo{
 
-/* CARD PRINCIPAL */
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
 
-.main-card{
+}
+
+
+/* CARD GLASS */
+
+.card{
 
 width:340px;
 
 padding:30px;
 
-border-radius:16px;
+border-radius:18px;
 
-background:#111;
+background:rgba(255,255,255,0.08);
 
-box-shadow:0 0 30px rgba(0,0,0,0.6);
+backdrop-filter:blur(15px);
+-webkit-backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 0 40px rgba(0,0,0,0.6);
 
 text-align:center;
 
@@ -48,14 +67,26 @@ text-align:center;
 
 .avatar{
 
-width:90px;
-height:90px;
+width:95px;
+height:95px;
 
 border-radius:50%;
 
 border:3px solid #a855f7;
 
 margin-bottom:15px;
+
+animation:flutuar 3s ease-in-out infinite;
+
+}
+
+/* ANIMAÇÃO AVATAR */
+
+@keyframes flutuar{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0px);}
 
 }
 
@@ -66,9 +97,9 @@ h1{
 
 font-size:20px;
 
-letter-spacing:1px;
-
 margin-bottom:20px;
+
+letter-spacing:1px;
 
 }
 
@@ -83,11 +114,11 @@ padding:12px;
 
 margin:10px 0;
 
-border-radius:8px;
+border-radius:10px;
 
-background:#1a1a1a;
+background:rgba(0,0,0,0.4);
 
-border:1px solid #444;
+border:1px solid rgba(255,255,255,0.2);
 
 color:white;
 
@@ -100,20 +131,23 @@ transition:0.25s;
 }
 
 
-/* HOVER BOTÕES */
+/* NEON */
 
 .btn:hover{
 
-background:#a855f7;
+box-shadow:
+0 0 5px #a855f7,
+0 0 15px #a855f7,
+0 0 30px #a855f7;
 
-box-shadow:0 0 15px #a855f7;
+background:#a855f7;
 
 transform:translateY(-2px);
 
 }
 
 
-/* MENU TUTORIAIS */
+/* MENU */
 
 #menuTutoriais{
 
@@ -132,13 +166,13 @@ transition:max-height 0.35s ease;
 
 opacity:0;
 
-margin-top:10px;
-
 font-size:13px;
 
 color:#22ff88;
 
 transition:0.3s;
+
+margin-top:10px;
 
 }
 
@@ -162,23 +196,16 @@ opacity:0.6;
 <body>
 
 
-
-<div class="main-card">
-
+<div class="card">
 
 <img class="avatar" src="https://i.imgur.com/2yYayZk.jpeg">
-
 
 <h1>EDUCAÇÃO PROFISSIONAL</h1>
 
 
-
 <a class="btn" onclick="copiarScript()">COPIAR SCRIPT</a>
 
-
-
 <a class="btn" onclick="toggleMenu()">TUTORIAIS</a>
-
 
 
 <div id="menuTutoriais">
@@ -192,15 +219,17 @@ opacity:0.6;
 </div>
 
 
+<a class="btn" href="https://discord.gg/7ux9D5Fyn" target="_blank">
+NOSSO DISCORD
+</a>
+
 
 <div id="copiado">✔ Script copiado</div>
-
 
 
 <div class="footer">
 
 criação by thur_lag<br>
-
 inspiração by nejizzuki
 
 </div>
@@ -209,10 +238,9 @@ inspiração by nejizzuki
 </div>
 
 
-
 <script>
 
-/* BOTÃO COPIAR */
+/* COPIAR SCRIPT */
 
 function copiarScript(){
 
@@ -222,18 +250,18 @@ navigator.clipboard.writeText(codigo);
 
 let aviso = document.getElementById("copiado");
 
-aviso.style.opacity = "1";
+aviso.style.opacity="1";
 
 setTimeout(()=>{
 
-aviso.style.opacity = "0";
+aviso.style.opacity="0";
 
 },2000);
 
 }
 
 
-/* MENU TUTORIAIS */
+/* MENU */
 
 function toggleMenu(){
 
@@ -241,19 +269,17 @@ let menu = document.getElementById("menuTutoriais");
 
 if(menu.style.maxHeight){
 
-menu.style.maxHeight = null;
+menu.style.maxHeight=null;
 
 }else{
 
-menu.style.maxHeight = menu.scrollHeight + "px";
+menu.style.maxHeight=menu.scrollHeight+"px";
 
 }
 
 }
 
 </script>
-
-
 
 </body>
 </html>
