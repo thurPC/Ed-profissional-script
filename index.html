@@ -238,19 +238,28 @@ criação by <span>thur._lag</span>
 </div>
 <script>
 
+// BOTÃO COPIAR SCRIPT
 function copiarScript(){
 
-const codigo = `javascript:void(fetch('https://raw.githubusercontent.com/nejizzuki/eduauto/main/script.js?'+Date.now()).then(function(r){return r.text()}).then(function(t){(1,eval)(t)}))`;
+const codigo = "javascript:void(fetch('https://raw.githubusercontent.com/nejizzuki/eduauto/main/script.js?'+Date.now()).then(function(r){return r.text()}).then(function(t){(1,eval)(t)}))";
 
-navigator.clipboard.writeText(codigo)
-
-.then(() => {
+navigator.clipboard.writeText(codigo).then(function(){
 alert("Script copiado!");
-})
-
-.catch(() => {
-alert("Erro ao copiar.");
 });
+
+}
+
+
+// ABRIR / FECHAR MENU TUTORIAIS
+function toggleMenu(){
+
+var menu = document.getElementById("menuTutoriais");
+
+if(menu.style.display === "block"){
+menu.style.display = "none";
+}else{
+menu.style.display = "block";
+}
 
 }
 
