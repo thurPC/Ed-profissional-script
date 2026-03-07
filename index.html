@@ -2,11 +2,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>EduAuto</title>
+<title>Educação Profissional</title>
 
 <style>
-
-/* GIF FUNDO */
 
 body{
 margin:0;
@@ -14,109 +12,58 @@ height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:url("https://i.pinimg.com/originals/6c/63/b6/6c63b6f6c9e0b2e2b7db7c57d720e2ea.gif");
-background-size:cover;
-background-position:center;
+background:#0e0e0e;
 font-family:Arial;
 }
 
-
-/* CARD GLASS */
+/* CARD */
 
 .card{
-
 padding:40px;
 border-radius:20px;
-
-background: rgba(255,255,255,0.1);
-
-backdrop-filter: blur(15px);
--webkit-backdrop-filter: blur(15px);
-
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(10px);
 border:1px solid rgba(255,255,255,0.2);
-
-box-shadow:0 8px 32px rgba(0,0,0,0.4);
-
 text-align:center;
-
+color:white;
 }
-
 
 /* BOTÕES */
 
 .btn{
-
 display:block;
 margin:15px;
 padding:15px;
-
-border-radius:12px;
-
+border-radius:10px;
+background:#1a1a1a;
 color:white;
 text-decoration:none;
-
-background:rgba(255,255,255,0.15);
-
 transition:0.3s;
-
 cursor:pointer;
-
 }
-
-
-/* EFEITO NEON */
 
 .btn:hover{
-
-box-shadow:
-0 0 10px #00f0ff,
-0 0 20px #00f0ff,
-0 0 40px #00f0ff;
-
-transform:scale(1.05);
-
+box-shadow:0 0 15px #a855f7;
+transform:translateY(-2px);
 }
 
-
-/* MENU TUTORIAIS */
+/* MENU */
 
 #menuTutoriais{
-
 max-height:0;
 overflow:hidden;
 transition:max-height 0.4s ease;
-
-}
-
-#menuTutoriais a{
-
-font-size:14px;
-
-}
-
-
-/* AVISO COPIADO */
-
-#copiado{
-
-opacity:0;
-margin-top:10px;
-color:#00ff9d;
-font-size:14px;
-
-transition:opacity 0.3s;
-
 }
 
 </style>
+
 </head>
 
 <body>
 
-
 <div class="card">
 
-<h2 style="color:white;">EduAuto</h2>
+<h2>EDUCAÇÃO PROFISSIONAL</h2>
 
 <a class="btn" onclick="copiarScript()">COPIAR SCRIPT</a>
 
@@ -124,19 +71,15 @@ transition:opacity 0.3s;
 
 <div id="menuTutoriais">
 
-<a class="btn">Tutorial 1</a>
-<a class="btn">Tutorial 2</a>
+<a class="btn">ANDROID</a>
+<a class="btn">IOS</a>
+<a class="btn">PC</a>
 
 </div>
 
-<div id="copiado">✔ Script copiado</div>
-
 </div>
-
 
 <script>
-
-/* COPIAR SCRIPT */
 
 function copiarScript(){
 
@@ -144,18 +87,9 @@ const codigo = "javascript:void(fetch('https://raw.githubusercontent.com/nejizzu
 
 navigator.clipboard.writeText(codigo);
 
-let aviso = document.getElementById("copiado");
-
-aviso.style.opacity = "1";
-
-setTimeout(()=>{
-aviso.style.opacity = "0";
-},2000);
+alert("Script copiado!");
 
 }
-
-
-/* MENU TUTORIAIS SLIDE */
 
 function toggleMenu(){
 
@@ -175,202 +109,5 @@ menu.style.maxHeight = menu.scrollHeight + "px";
 
 </script>
 
-
-</body>
-</html>margin-bottom:20px;
-border:3px solid #8b5cf6;
-background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
-}
-
-/* titulo */
-
-h1{
-font-size:16px;
-letter-spacing:3px;
-margin-bottom:30px;
-color:#c084fc;
-}
-
-/* botoes */
-
-.btn{
-display:block;
-margin:12px 0;
-padding:14px;
-border-radius:8px;
-border:1px solid #ffffff15;
-background:#0e0e0e;
-color:white;
-text-decoration:none;
-transition:.25s;
-font-size:13px;
-letter-spacing:1px;
-}
-
-.btn:hover{
-border-color:#a855f7;
-box-shadow:0 0 15px #a855f7;
-transform:translateY(-2px);
-}
-
-.discord-btn{
-color:white;
-text-decoration:none;
-background:#5865F2;
-padding:10px 20px;
-border-radius:8px;
-font-family:sans-serif;
-}
-
-.menu{
-text-align:center;
-margin-top:15px;
-}
-
-.menu-btn{
-display:block;
-margin:12px 0;
-width:220px;
-padding:14px;
-
-background:#0e0e0e;
-color:white;
-
-border:1px solid #ffffff15;
-border-radius:8px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-cursor:pointer;
-
-}
-
-/* submenu escondido */
-
-.submenu{
-
-display:none;
-flex-direction:column;
-margin-top:2px;
-
-}
-
-/* botoes dentro */
-
-.btn-sub{
-
-display:block;
-
-background:#1a1a1a;
-color:white;
-
-padding:10px;
-margin:5px 0;
-
-border-radius:6px;
-text-decoration:none;
-
-}
-
-/* animação da seta */
-
-#seta{
-transition:0.3s;
-}  
-/* botao destaque */
-
-.btn.main{
-background:#a855f7;
-color:white;
-}
-
-.btn.main:hover{
-box-shadow:0 0 20px #a855f7;
-}
-
-/* footer */
-
-.footer{
-margin-top:25px;
-font-size:10px;
-opacity:.6;
-}
-
-.footer span{
-color:#c084fc;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="avatar"></div>
-
-<h1>EDUCACAO PROFISSIONAL</h1>
-
-<a class="btn main" href="#">LOGIN AUTOMÁTICO</a>
-
-<a class="btn" href="#" onclick="copiarScript()">COPIAR SCRIPT</a>
-
-<div class="menu">
-
-<button class="btn" onclick="toggleMenu()">
-<span>Tutoriais</span>
-<span id="seta">▶</span>
-</button>
-
-<div id="submenu" class="submenu">
-
-<a href="#" class="btn-sub">android</a>
-<a href="#" class="btn-sub">IOS</a>
-<a href="#" class="btn-sub">PC (logo logo)</a>
-
-</div>
-
-</div>
-
-<a class="btn" href="https://discord.gg/d4eJTDYVC" target="_blank">
-discord.gg/Baguncinha
-</a>
-
-<div class="footer">
-criação by <span>thur._lag</span>
-</div>
-<div class="footer">
-  inspiração by <span>nejizzuki</span>
-</div>
-<script>
-
-// BOTÃO COPIAR SCRIPT
-function copiarScript(){
-
-const codigo = "javascript:void(fetch('https://raw.githubusercontent.com/nejizzuki/eduauto/main/script.js?'+Date.now()).then(function(r){return r.text()}).then(function(t){(1,eval)(t)}))";
-
-navigator.clipboard.writeText(codigo).then(function(){
-alert("Script copiado!");
-});
-
-}
-
-
-// ABRIR / FECHAR MENU TUTORIAIS
-function toggleMenu(){
-
-var menu = document.getElementById("menuTutoriais");
-
-if(menu.style.display === "block"){
-menu.style.display = "none";
-}else{
-menu.style.display = "block";
-}
-
-}
-
-</script>
 </body>
 </html>
