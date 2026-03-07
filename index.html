@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,704 +15,57 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Orbitron,sans-serif;
+font-family:Orbitron, sans-serif;
 }
 
-/* FUNDO */
-
 body{
-
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-
-background:#05050a;
-
+background:#050505;
 color:white;
 overflow:hidden;
-
 }
 
-/* GIF CENTRAL */
-
-.gif-bg{
-
-position:fixed;
-
-top:50%;
-left:50%;
-
-transform:translate(-50%,-50%);
-
-width:700px;
-
-opacity:.18;
-
-z-index:0;
-
-pointer-events:none;
-
-}
-
-/* GRID ROXO FUNDO */
+/* fundo animado */
 
 body::before{
-
 content:"";
-
 position:fixed;
-
-width:100%;
-height:100%;
-
+width:200%;
+height:200%;
 background:
-
-linear-gradient(#0000 95%, #7c3aed22 96%),
-linear-gradient(90deg,#0000 95%, #7c3aed22 96%);
-
-background-size:40px 40px;
-
-opacity:.15;
-
+radial-gradient(circle at 20% 20%, #7a2cff22, transparent 40%),
+radial-gradient(circle at 80% 60%, #a855ff22, transparent 40%),
+radial-gradient(circle at 40% 80%, #9333ea22, transparent 40%);
+animation:bgmove 18s infinite linear;
 }
 
-/* CARD */
+@keyframes bgmove{
+0%{transform:translate(0,0)}
+50%{transform:translate(-10%, -10%)}
+100%{transform:translate(0,0)}
+}
+
+/* card */
 
 .container{
-
 position:relative;
-
-z-index:2;
-
-width:360px;
-
+width:340px;
 padding:40px;
-
-border-radius:22px;
-
-background:rgba(20,20,25,.55);
-
-backdrop-filter:blur(14px);
-
-border:1px solid rgba(167,139,250,.25);
-
-box-shadow:
-
-0 0 40px rgba(124,58,237,.25),
-inset 0 0 15px rgba(124,58,237,.15);
-
+border-radius:16px;
+background:#0a0a0a;
+border:1px solid #8b5cf620;
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px #000;
 text-align:center;
-
 }
 
-/* AVATAR */
-
-.avatar{
-
-width:110px;
-height:110px;
-
-margin:auto;
-margin-bottom:20px;
-
-border-radius:50%;
-
-border:3px solid #8b5cf6;
-
-background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
-
-box-shadow:0 0 20px #7c3aed;
-
-}
-
-/* TITULO */
-
-h1{
-
-font-size:18px;
-
-letter-spacing:3px;
-
-margin-bottom:30px;
-
-color:#c4b5fd;
-
-}
-
-/* BOTÕES */
-
-.btn{
-
-display:block;
-
-margin:12px 0;
-
-padding:14px;
-
-border-radius:10px;
-
-border:1px solid rgba(255,255,255,.08);
-
-background:rgba(0,0,0,.35);
-
-color:white;
-
-text-decoration:none;
-
-transition:.25s;
-
-font-size:13px;
-
-letter-spacing:1px;
-
-}
-
-.btn:hover{
-
-border-color:#a855f7;
-
-box-shadow:0 0 15px #a855f7;
-
-transform:translateY(-2px);
-
-}
-
-/* BOTÃO PRINCIPAL */
-
-.btn.main{
-
-background:linear-gradient(90deg,#7c3aed,#a855f7);
-
-}
-
-/* MENU */
-
-.menu-btn{
-
-width:100%;
-
-padding:14px;
-
-border-radius:10px;
-
-border:1px solid rgba(255,255,255,.08);
-
-background:rgba(0,0,0,.35);
-
-color:white;
-
-display:flex;
-
-justify-content:space-between;
-
-cursor:pointer;
-
-}
-
-/* SUBMENU */
-
-.submenu{
-
-display:none;
-
-flex-direction:column;
-
-margin-top:5px;
-
-}
-
-.btn-sub{
-
-background:rgba(0,0,0,.35);
-
-padding:10px;
-
-margin:4px 0;
-
-border-radius:6px;
-
-text-decoration:none;
-
-color:white;
-
-}
-
-/* FOOTER */
-
-.footer{
-
-margin-top:20px;
-
-font-size:11px;
-
-opacity:.6;
-
-}
-
-.footer span{
-
-color:#a78bfa;
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- GIF DE FUNDO -->
-<img class="gif-bg" src="SEU-GIF.gif">
-
-<div class="container">
-
-<div class="avatar"></div>
-
-<h1>EDUCAÇÃO PROFISSIONAL</h1>
-
-<a class="btn main" href="#">LOGIN AUTOMÁTICO</a>
-
-<a class="btn" href="#">COPIAR SCRIPT</a>
-
-<button class="menu-btn" onclick="toggleMenu()">
-
-<span>Tutoriais</span>
-
-<span id="seta">▶</span>
-
-</button>
-
-<div id="submenu" class="submenu">
-
-<a class="btn-sub" href="#">Android</a>
-<a class="btn-sub" href="#">IOS</a>
-<a class="btn-sub" href="#">PC (logo logo)</a>
-
-</div>
-
-<a class="btn" href="https://discord.gg/d4eJTDYVC" target="_blank">
-discord.gg/Baguncinha
-</a>
-
-<div class="footer">
-
-criação by <span>thur._lag</span>
-
-</div>
-
-</div>
-
-<script>
-
-function toggleMenu(){
-
-let menu = document.getElementById("submenu")
-let seta = document.getElementById("seta")
-
-if(menu.style.display==="flex"){
-
-menu.style.display="none"
-seta.style.transform="rotate(0deg)"
-
-}else{
-
-menu.style.display="flex"
-seta.style.transform="rotate(90deg)"
-
-}
-
-}
-
-</script>
-
-</body>
-</html>/* AVATAR */
+/* avatar */
 
 .avatar{
 width:100px;
-height:100px;
-border-radius:50%;
-
-margin:auto;
-margin-bottom:20px;
-
-border:3px solid #8b5cf6;
-
-background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
-}
-
-/* TITULO */
-
-h1{
-font-size:16px;
-letter-spacing:3px;
-margin-bottom:30px;
-color:#c084fc;
-}
-
-/* BOTÕES */
-
-.btn{
-display:block;
-margin:12px 0;
-padding:14px;
-
-border-radius:8px;
-
-border:1px solid #ffffff15;
-
-background:#0e0e0e;
-
-color:white;
-
-text-decoration:none;
-
-transition:.25s;
-
-font-size:13px;
-letter-spacing:1px;
-}
-
-.btn:hover{
-border-color:#a855f7;
-box-shadow:0 0 15px #a855f7;
-transform:translateY(-2px);
-}
-
-/* BOTÃO PRINCIPAL */
-
-.btn.main{
-background:#a855f7;
-}
-
-/* MENU */
-
-.menu{
-margin-top:10px;
-}
-
-.menu-btn{
-
-width:100%;
-padding:14px;
-
-background:#0e0e0e;
-color:white;
-
-border:1px solid #ffffff15;
-border-radius:8px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-cursor:pointer;
-}
-
-/* SUBMENU */
-
-.submenu{
-display:none;
-flex-direction:column;
-margin-top:5px;
-}
-
-.btn-sub{
-background:#1a1a1a;
-color:white;
-
-padding:10px;
-margin:5px 0;
-
-border-radius:6px;
-
-text-decoration:none;
-}
-
-#seta{
-transition:.3s;
-}
-
-/* FOOTER */
-
-.footer{
-margin-top:20px;
-font-size:10px;
-opacity:.7;
-}
-
-.footer span{
-color:#c084fc;
-}
-
-</style>
-</head>
-
-<body>
-
-<!-- GIF CENTRAL -->
-<img class="gif-bg" src="SEU_GIF_AQUI.gif">
-
-<div class="container">
-
-<div class="avatar"></div>
-
-<h1>EDUCACAO PROFISSIONAL</h1>
-
-<a class="btn main" href="#">LOGIN AUTOMÁTICO</a>
-
-<a class="btn" href="#">COPIAR SCRIPT</a>
-
-<div class="menu">
-
-<button class="menu-btn" onclick="toggleMenu()">
-<span>Tutoriais</span>
-<span id="seta">▶</span>
-</button>
-
-<div id="submenu" class="submenu">
-
-<a href="#" class="btn-sub">Android</a>
-<a href="#" class="btn-sub">IOS</a>
-<a href="#" class="btn-sub">PC (logo logo)</a>
-
-</div>
-
-</div>
-
-<a class="btn" href="https://discord.gg/d4eJTDYVC" target="_blank">
-discord.gg/Baguncinha
-</a>
-
-<div class="footer">
-criação by <span>thur._lag</span>
-</div>
-
-<div class="footer">
-inspiração by <span>nejizzuki</span>
-</div>
-
-</div>
-
-<script>
-
-function toggleMenu(){
-
-let menu = document.getElementById("submenu")
-let seta = document.getElementById("seta")
-
-if(menu.style.display === "flex"){
-
-menu.style.display = "none"
-seta.style.transform = "rotate(0deg)"
-
-}else{
-
-menu.style.display = "flex"
-seta.style.transform = "rotate(90deg)"
-
-}
-
-}
-
-</script>
-
-</body>
-</html>.avatar{
-width:100px;
-height:100px;
-border-radius:50%;
-
-margin:auto;
-margin-bottom:20px;
-
-border:3px solid #8b5cf6;
-
-background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
-}
-
-/* TITULO */
-
-h1{
-font-size:16px;
-letter-spacing:3px;
-margin-bottom:30px;
-color:#c084fc;
-}
-
-/* BOTÕES */
-
-.btn{
-display:block;
-margin:12px 0;
-padding:14px;
-
-border-radius:8px;
-
-border:1px solid #ffffff15;
-
-background:rgba(0,0,0,0.5);
-
-color:white;
-
-text-decoration:none;
-
-transition:.25s;
-
-font-size:13px;
-letter-spacing:1px;
-}
-
-.btn:hover{
-border-color:#a855f7;
-box-shadow:0 0 15px #a855f7;
-transform:translateY(-2px);
-}
-
-/* BOTÃO PRINCIPAL */
-
-.btn.main{
-background:#a855f7;
-}
-
-.btn.main:hover{
-box-shadow:0 0 20px #a855f7;
-}
-
-/* MENU */
-
-.menu{
-margin-top:10px;
-}
-
-.menu-btn{
-
-width:100%;
-padding:14px;
-
-background:rgba(0,0,0,0.6);
-color:white;
-
-border:1px solid #ffffff15;
-border-radius:8px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-cursor:pointer;
-}
-
-/* SUBMENU */
-
-.submenu{
-display:none;
-flex-direction:column;
-margin-top:5px;
-}
-
-.btn-sub{
-background:rgba(0,0,0,0.5);
-color:white;
-
-padding:10px;
-margin:5px 0;
-
-border-radius:6px;
-
-text-decoration:none;
-}
-
-/* SETA */
-
-#seta{
-transition:.3s;
-}
-
-/* FOOTER */
-
-.footer{
-margin-top:20px;
-font-size:10px;
-opacity:.7;
-}
-
-.footer span{
-color:#c084fc;
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<div class="avatar"></div>
-
-<h1>EDUCACAO PROFISSIONAL</h1>
-
-<a class="btn main" href="#">LOGIN AUTOMÁTICO</a>
-
-<a class="btn" href="#">COPIAR SCRIPT</a>
-
-<div class="menu">
-
-<button class="menu-btn" onclick="toggleMenu()">
-<span>Tutoriais</span>
-<span id="seta">▶</span>
-</button>
-
-<div id="submenu" class="submenu">
-
-<a href="#" class="btn-sub">Android</a>
-<a href="#" class="btn-sub">IOS</a>
-<a href="#" class="btn-sub">PC (logo logo)</a>
-
-</div>
-
-</div>
-
-<a class="btn" href="https://discord.gg/d4eJTDYVC" target="_blank">
-discord.gg/Baguncinha
-</a>
-
-<div class="footer">
-criação by <span>thur._lag</span>
-</div>
-
-<div class="footer">
-inspiração by <span>nejizzuki</span>
-</div>
-
-</div>
-
-<script>
-
-function toggleMenu(){
-
-let menu = document.getElementById("submenu")
-let seta = document.getElementById("seta")
-
-if(menu.style.display === "flex"){
-
-menu.style.display = "none"
-seta.style.transform = "rotate(0deg)"
-
-}else{
-
-menu.style.display = "flex"
-seta.style.transform = "rotate(90deg)"
-
-}
-
-}
-
-</script>
-
-</body>
-</html>width:100px;
 height:100px;
 border-radius:50%;
 margin:auto;
@@ -752,26 +105,24 @@ box-shadow:0 0 15px #a855f7;
 transform:translateY(-2px);
 }
 
-/* botao destaque */
-
-.btn.main{
-background:#a855f7;
+.discord-btn{
+color:white;
+text-decoration:none;
+background:#5865F2;
+padding:10px 20px;
+border-radius:8px;
+font-family:sans-serif;
 }
-
-.btn.main:hover{
-box-shadow:0 0 20px #a855f7;
-}
-
-/* menu */
 
 .menu{
-margin-top:10px;
+text-align:center;
+margin-top:15px;
 }
 
-/* botao tutoriais */
-
 .menu-btn{
-width:100%;
+display:block;
+margin:12px 0;
+width:220px;
 padding:14px;
 
 background:#0e0e0e;
@@ -785,25 +136,25 @@ justify-content:space-between;
 align-items:center;
 
 cursor:pointer;
-transition:.25s;
+
 }
 
-.menu-btn:hover{
-border-color:#a855f7;
-box-shadow:0 0 10px #a855f7;
-}
-
-/* submenu */
+/* submenu escondido */
 
 .submenu{
+
 display:none;
 flex-direction:column;
-margin-top:5px;
+margin-top:2px;
+
 }
 
-/* botoes internos */
+/* botoes dentro */
 
 .btn-sub{
+
+display:block;
+
 background:#1a1a1a;
 color:white;
 
@@ -813,23 +164,28 @@ margin:5px 0;
 border-radius:6px;
 text-decoration:none;
 
-transition:.2s;
-}
-
-.btn-sub:hover{
-background:#2a2a2a;
 }
 
 /* animação da seta */
 
 #seta{
-transition:.3s;
+transition:0.3s;
+}  
+/* botao destaque */
+
+.btn.main{
+background:#a855f7;
+color:white;
+}
+
+.btn.main:hover{
+box-shadow:0 0 20px #a855f7;
 }
 
 /* footer */
 
 .footer{
-margin-top:20px;
+margin-top:25px;
 font-size:10px;
 opacity:.6;
 }
@@ -855,14 +211,14 @@ color:#c084fc;
 
 <div class="menu">
 
-<button class="menu-btn" onclick="toggleMenu()">
+<button class="btn" onclick="toggleMenu()">
 <span>Tutoriais</span>
 <span id="seta">▶</span>
 </button>
 
 <div id="submenu" class="submenu">
 
-<a href="#" class="btn-sub">Android</a>
+<a href="#" class="btn-sub">android</a>
 <a href="#" class="btn-sub">IOS</a>
 <a href="#" class="btn-sub">PC (logo logo)</a>
 
@@ -877,13 +233,9 @@ discord.gg/Baguncinha
 <div class="footer">
 criação by <span>thur._lag</span>
 </div>
-
 <div class="footer">
-inspiração by <span>nejizzuki</span>
+  inspiração by <span>nejizzuki</span>
 </div>
-
-</div>
-
 <script>
 
 function toggleMenu(){
@@ -905,7 +257,6 @@ seta.style.transform = "rotate(90deg)"
 
 }
 
-</script>
-
+   </script>
 </body>
 </html>
