@@ -57,29 +57,119 @@ transition:max-height 0.4s ease;
 
 </style>
 
-</head>
+<style>
 
-<body>
+body{
+margin:0;
+background:#0e0e0e;
+font-family:sans-serif;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
 
-<div class="card">
+/* CARD PRINCIPAL */
 
-<h2>EDUCAÇÃO PROFISSIONAL</h2>
+.main-card{
+width:340px;
+padding:25px;
+border-radius:15px;
 
-<a class="btn" onclick="copiarScript()">COPIAR SCRIPT</a>
+background:#111;
 
-<a class="btn" onclick="toggleMenu()">TUTORIAIS</a>
+box-shadow:0 0 20px rgba(0,0,0,0.6);
 
-<div id="menuTutoriais">
+text-align:center;
 
-<a class="btn">ANDROID</a>
-<a class="btn">IOS</a>
-<a class="btn">PC</a>
+}
 
-</div>
+/* AVATAR */
 
-</div>
+.avatar{
 
-<script>
+width:90px;
+height:90px;
+
+border-radius:50%;
+
+margin:auto;
+
+display:block;
+
+margin-bottom:15px;
+
+border:3px solid #a855f7;
+
+}
+
+/* TITULO */
+
+h1{
+
+font-size:18px;
+color:white;
+margin-bottom:20px;
+
+}
+
+/* BOTÕES */
+
+.btn{
+
+display:block;
+
+margin:10px 0;
+
+padding:12px;
+
+border-radius:8px;
+
+background:#1a1a1a;
+
+color:white;
+
+text-decoration:none;
+
+border:1px solid #444;
+
+transition:0.3s;
+
+}
+
+.btn:hover{
+
+background:#a855f7;
+
+box-shadow:0 0 15px #a855f7;
+
+transform:translateY(-2px);
+
+}
+
+/* MENU */
+
+#menuTutoriais{
+
+max-height:0;
+
+overflow:hidden;
+
+transition:max-height 0.4s ease;
+
+}
+
+.footer{
+
+margin-top:20px;
+
+font-size:11px;
+
+color:#aaa;
+
+}
+
+</style>
 
 function copiarScript(){
 
