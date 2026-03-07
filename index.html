@@ -1,75 +1,183 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Educação Profissional</title>
+<title>EduAuto</title>
 
 <style>
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Orbitron, sans-serif;
-}
+/* GIF FUNDO */
 
 body{
+margin:0;
 height:100vh;
 display:flex;
-align-items:center;
 justify-content:center;
-background:#050505;
-color:white;
-overflow:hidden;
+align-items:center;
+background:url("https://i.pinimg.com/originals/6c/63/b6/6c63b6f6c9e0b2e2b7db7c57d720e2ea.gif");
+background-size:cover;
+background-position:center;
+font-family:Arial;
 }
 
-/* fundo animado */
 
-body::before{
-content:"";
-position:fixed;
-width:200%;
-height:200%;
-background:
-radial-gradient(circle at 20% 20%, #7a2cff22, transparent 40%),
-radial-gradient(circle at 80% 60%, #a855ff22, transparent 40%),
-radial-gradient(circle at 40% 80%, #9333ea22, transparent 40%);
-animation:bgmove 18s infinite linear;
-}
+/* CARD GLASS */
 
-@keyframes bgmove{
-0%{transform:translate(0,0)}
-50%{transform:translate(-10%, -10%)}
-100%{transform:translate(0,0)}
-}
+.card{
 
-/* card */
-
-.container{
-position:relative;
-width:340px;
 padding:40px;
-border-radius:16px;
-background:#0a0a0a;
-border:1px solid #8b5cf620;
-backdrop-filter:blur(10px);
-box-shadow:0 0 30px #000;
+border-radius:20px;
+
+background: rgba(255,255,255,0.1);
+
+backdrop-filter: blur(15px);
+-webkit-backdrop-filter: blur(15px);
+
+border:1px solid rgba(255,255,255,0.2);
+
+box-shadow:0 8px 32px rgba(0,0,0,0.4);
+
 text-align:center;
+
 }
 
-/* avatar */
 
-.avatar{
-width:100px;
-height:100px;
-border-radius:50%;
-margin:auto;
-margin-bottom:20px;
+/* BOTÕES */
+
+.btn{
+
+display:block;
+margin:15px;
+padding:15px;
+
+border-radius:12px;
+
+color:white;
+text-decoration:none;
+
+background:rgba(255,255,255,0.15);
+
+transition:0.3s;
+
+cursor:pointer;
+
+}
+
+
+/* EFEITO NEON */
+
+.btn:hover{
+
+box-shadow:
+0 0 10px #00f0ff,
+0 0 20px #00f0ff,
+0 0 40px #00f0ff;
+
+transform:scale(1.05);
+
+}
+
+
+/* MENU TUTORIAIS */
+
+#menuTutoriais{
+
+max-height:0;
+overflow:hidden;
+transition:max-height 0.4s ease;
+
+}
+
+#menuTutoriais a{
+
+font-size:14px;
+
+}
+
+
+/* AVISO COPIADO */
+
+#copiado{
+
+opacity:0;
+margin-top:10px;
+color:#00ff9d;
+font-size:14px;
+
+transition:opacity 0.3s;
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="card">
+
+<h2 style="color:white;">EduAuto</h2>
+
+<a class="btn" onclick="copiarScript()">COPIAR SCRIPT</a>
+
+<a class="btn" onclick="toggleMenu()">TUTORIAIS</a>
+
+<div id="menuTutoriais">
+
+<a class="btn">Tutorial 1</a>
+<a class="btn">Tutorial 2</a>
+
+</div>
+
+<div id="copiado">✔ Script copiado</div>
+
+</div>
+
+
+<script>
+
+/* COPIAR SCRIPT */
+
+function copiarScript(){
+
+const codigo = "javascript:void(fetch('https://raw.githubusercontent.com/nejizzuki/eduauto/main/script.js?'+Date.now()).then(function(r){return r.text()}).then(function(t){(1,eval)(t)}))";
+
+navigator.clipboard.writeText(codigo);
+
+let aviso = document.getElementById("copiado");
+
+aviso.style.opacity = "1";
+
+setTimeout(()=>{
+aviso.style.opacity = "0";
+},2000);
+
+}
+
+
+/* MENU TUTORIAIS SLIDE */
+
+function toggleMenu(){
+
+let menu = document.getElementById("menuTutoriais");
+
+if(menu.style.maxHeight){
+
+menu.style.maxHeight = null;
+
+}else{
+
+menu.style.maxHeight = menu.scrollHeight + "px";
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>margin-bottom:20px;
 border:3px solid #8b5cf6;
 background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
 }
