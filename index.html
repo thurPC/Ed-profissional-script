@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,22 +15,29 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Orbitron, sans-serif;
+font-family:Orbitron,sans-serif;
 }
 
+/* FUNDO */
+
 body{
+
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-background:#050505;
+
+background:#05050a;
+
 color:white;
 overflow:hidden;
+
 }
 
 /* GIF CENTRAL */
 
 .gif-bg{
+
 position:fixed;
 
 top:50%;
@@ -38,38 +45,289 @@ left:50%;
 
 transform:translate(-50%,-50%);
 
-width:600px;
+width:700px;
 
-opacity:0.35;
+opacity:.18;
 
 z-index:0;
 
 pointer-events:none;
+
+}
+
+/* GRID ROXO FUNDO */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+width:100%;
+height:100%;
+
+background:
+
+linear-gradient(#0000 95%, #7c3aed22 96%),
+linear-gradient(90deg,#0000 95%, #7c3aed22 96%);
+
+background-size:40px 40px;
+
+opacity:.15;
+
 }
 
 /* CARD */
 
 .container{
-position:relative;
-z-index:1;
 
-width:340px;
+position:relative;
+
+z-index:2;
+
+width:360px;
+
 padding:40px;
 
-border-radius:16px;
+border-radius:22px;
 
-background:rgba(10,10,10,0.55);
+background:rgba(20,20,25,.55);
 
-backdrop-filter:blur(10px);
+backdrop-filter:blur(14px);
 
-border:1px solid #8b5cf620;
+border:1px solid rgba(167,139,250,.25);
 
-box-shadow:0 0 30px #000;
+box-shadow:
+
+0 0 40px rgba(124,58,237,.25),
+inset 0 0 15px rgba(124,58,237,.15);
 
 text-align:center;
+
 }
 
 /* AVATAR */
+
+.avatar{
+
+width:110px;
+height:110px;
+
+margin:auto;
+margin-bottom:20px;
+
+border-radius:50%;
+
+border:3px solid #8b5cf6;
+
+background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
+
+box-shadow:0 0 20px #7c3aed;
+
+}
+
+/* TITULO */
+
+h1{
+
+font-size:18px;
+
+letter-spacing:3px;
+
+margin-bottom:30px;
+
+color:#c4b5fd;
+
+}
+
+/* BOTÕES */
+
+.btn{
+
+display:block;
+
+margin:12px 0;
+
+padding:14px;
+
+border-radius:10px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(0,0,0,.35);
+
+color:white;
+
+text-decoration:none;
+
+transition:.25s;
+
+font-size:13px;
+
+letter-spacing:1px;
+
+}
+
+.btn:hover{
+
+border-color:#a855f7;
+
+box-shadow:0 0 15px #a855f7;
+
+transform:translateY(-2px);
+
+}
+
+/* BOTÃO PRINCIPAL */
+
+.btn.main{
+
+background:linear-gradient(90deg,#7c3aed,#a855f7);
+
+}
+
+/* MENU */
+
+.menu-btn{
+
+width:100%;
+
+padding:14px;
+
+border-radius:10px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(0,0,0,.35);
+
+color:white;
+
+display:flex;
+
+justify-content:space-between;
+
+cursor:pointer;
+
+}
+
+/* SUBMENU */
+
+.submenu{
+
+display:none;
+
+flex-direction:column;
+
+margin-top:5px;
+
+}
+
+.btn-sub{
+
+background:rgba(0,0,0,.35);
+
+padding:10px;
+
+margin:4px 0;
+
+border-radius:6px;
+
+text-decoration:none;
+
+color:white;
+
+}
+
+/* FOOTER */
+
+.footer{
+
+margin-top:20px;
+
+font-size:11px;
+
+opacity:.6;
+
+}
+
+.footer span{
+
+color:#a78bfa;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- GIF DE FUNDO -->
+<img class="gif-bg" src="SEU-GIF.gif">
+
+<div class="container">
+
+<div class="avatar"></div>
+
+<h1>EDUCAÇÃO PROFISSIONAL</h1>
+
+<a class="btn main" href="#">LOGIN AUTOMÁTICO</a>
+
+<a class="btn" href="#">COPIAR SCRIPT</a>
+
+<button class="menu-btn" onclick="toggleMenu()">
+
+<span>Tutoriais</span>
+
+<span id="seta">▶</span>
+
+</button>
+
+<div id="submenu" class="submenu">
+
+<a class="btn-sub" href="#">Android</a>
+<a class="btn-sub" href="#">IOS</a>
+<a class="btn-sub" href="#">PC (logo logo)</a>
+
+</div>
+
+<a class="btn" href="https://discord.gg/d4eJTDYVC" target="_blank">
+discord.gg/Baguncinha
+</a>
+
+<div class="footer">
+
+criação by <span>thur._lag</span>
+
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+
+let menu = document.getElementById("submenu")
+let seta = document.getElementById("seta")
+
+if(menu.style.display==="flex"){
+
+menu.style.display="none"
+seta.style.transform="rotate(0deg)"
+
+}else{
+
+menu.style.display="flex"
+seta.style.transform="rotate(90deg)"
+
+}
+
+}
+
+</script>
+
+</body>
+</html>/* AVATAR */
 
 .avatar{
 width:100px;
