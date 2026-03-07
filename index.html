@@ -1,21 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 
 <head>
 <meta charset="UTF-8">
-<title>Meu Projeto</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel="stylesheet" href="style.css">
+<title>Educação Profissional</title>
 
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Orbitron, sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#050505;
+color:white;
+overflow:hidden;
+}
+
+/* fundo animado */
+
+body::before{
+content:"";
+position:fixed;
+width:200%;
+height:200%;
+background:
+radial-gradient(circle at 20% 20%, #7a2cff22, transparent 40%),
+radial-gradient(circle at 80% 60%, #a855ff22, transparent 40%),
+radial-gradient(circle at 40% 80%, #9333ea22, transparent 40%);
+animation:bgmove 18s infinite linear;
+}
+
+@keyframes bgmove{
+0%{transform:translate(0,0)}
+50%{transform:translate(-10%, -10%)}
+100%{transform:translate(0,0)}
+}
+
+/* card */
+
+.container{
+position:relative;
+width:340px;
+padding:40px;
+border-radius:16px;
+background:#0a0a0a;
+border:1px solid #8b5cf620;
+backdrop-filter:blur(10px);
+box-shadow:0 0 30px #000;
+text-align:center;
+}
+
+/* avatar */
+
+.avatar{
+width:100px;
+height:100px;
+border-radius:50%;
+margin:auto;
+margin-bottom:20px;
+border:3px solid #8b5cf6;
+background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
+}
+
+/* titulo */
+
+h1{
+font-size:16px;
+letter-spacing:3px;
+margin-bottom:30px;
+color:#c084fc;
+}
+
+/* botoes */
+
+.btn{
+display:block;
+margin:12px 0;
+padding:14px;
+border-radius:8px;
+border:1px solid #ffffff15;
+background:#0e0e0e;
+color:white;
+text-decoration:none;
+transition:.25s;
+font-size:13px;
+letter-spacing:1px;
+}
+
+.btn:hover{
+border-color:#a855f7;
+box-shadow:0 0 15px #a855f7;
+transform:translateY(-2px);
+}
+
+/* botao destaque */
+
+.btn.main{
+background:#a855f7;
+color:white;
+}
+
+.btn.main:hover{
+box-shadow:0 0 20px #a855f7;
+}
+
+/* footer */
+
+.footer{
+margin-top:25px;
+font-size:10px;
+opacity:.6;
+}
+
+.footer span{
+color:#c084fc;
+}
+
+</style>
 </head>
 
 <body>
 
-<h1>Meu projeto</h1>
-<p>Projeto carregado com sucesso.</p>
+<div class="container">
 
-<script src="script.js"></script>
+<div class="avatar"></div>
+
+<h1>EDUCACAO PROFISSIONAL</h1>
+
+<a class="btn main" href="#">LOGIN AUTOMÁTICO</a>
+
+<a class="btn" href="#">COPIAR SCRIPT</a>
+
+<a class="btn" href="#">MEUS PROJETOS</a>
+
+<a class="btn" href="#">TUTORIAL</a>
+
+<a class="btn" href="#">DISCORD</a>
+
+<div class="footer">
+made by <span>nejizzuki</span>
+</div>
+
+</div>
 
 </body>
-
 </html>
