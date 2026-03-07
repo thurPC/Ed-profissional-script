@@ -18,29 +18,33 @@ box-sizing:border-box;
 font-family:Orbitron, sans-serif;
 }
 
-/* FUNDO GIF */
-
 body{
 height:100vh;
 display:flex;
 align-items:center;
 justify-content:center;
-
-background:url("https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif") center center / cover no-repeat fixed;
-
+background:#050505;
 color:white;
 overflow:hidden;
 }
 
-/* camada escura leve */
+/* GIF CENTRAL */
 
-body::after{
-content:"";
+.gif-bg{
 position:fixed;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.4);
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+width:600px;
+
+opacity:0.35;
+
 z-index:0;
+
+pointer-events:none;
 }
 
 /* CARD */
@@ -54,15 +58,13 @@ padding:40px;
 
 border-radius:16px;
 
-/* transparência */
-
 background:rgba(10,10,10,0.55);
 
-backdrop-filter:blur(8px);
+backdrop-filter:blur(10px);
 
-border:1px solid rgba(255,255,255,0.08);
+border:1px solid #8b5cf620;
 
-box-shadow:0 0 30px rgba(0,0,0,0.6);
+box-shadow:0 0 30px #000;
 
 text-align:center;
 }
@@ -70,6 +72,196 @@ text-align:center;
 /* AVATAR */
 
 .avatar{
+width:100px;
+height:100px;
+border-radius:50%;
+
+margin:auto;
+margin-bottom:20px;
+
+border:3px solid #8b5cf6;
+
+background:url("https://i.imgur.com/2yYayZk.jpeg") center/cover;
+}
+
+/* TITULO */
+
+h1{
+font-size:16px;
+letter-spacing:3px;
+margin-bottom:30px;
+color:#c084fc;
+}
+
+/* BOTÕES */
+
+.btn{
+display:block;
+margin:12px 0;
+padding:14px;
+
+border-radius:8px;
+
+border:1px solid #ffffff15;
+
+background:#0e0e0e;
+
+color:white;
+
+text-decoration:none;
+
+transition:.25s;
+
+font-size:13px;
+letter-spacing:1px;
+}
+
+.btn:hover{
+border-color:#a855f7;
+box-shadow:0 0 15px #a855f7;
+transform:translateY(-2px);
+}
+
+/* BOTÃO PRINCIPAL */
+
+.btn.main{
+background:#a855f7;
+}
+
+/* MENU */
+
+.menu{
+margin-top:10px;
+}
+
+.menu-btn{
+
+width:100%;
+padding:14px;
+
+background:#0e0e0e;
+color:white;
+
+border:1px solid #ffffff15;
+border-radius:8px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+cursor:pointer;
+}
+
+/* SUBMENU */
+
+.submenu{
+display:none;
+flex-direction:column;
+margin-top:5px;
+}
+
+.btn-sub{
+background:#1a1a1a;
+color:white;
+
+padding:10px;
+margin:5px 0;
+
+border-radius:6px;
+
+text-decoration:none;
+}
+
+#seta{
+transition:.3s;
+}
+
+/* FOOTER */
+
+.footer{
+margin-top:20px;
+font-size:10px;
+opacity:.7;
+}
+
+.footer span{
+color:#c084fc;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- GIF CENTRAL -->
+<img class="gif-bg" src="SEU_GIF_AQUI.gif">
+
+<div class="container">
+
+<div class="avatar"></div>
+
+<h1>EDUCACAO PROFISSIONAL</h1>
+
+<a class="btn main" href="#">LOGIN AUTOMÁTICO</a>
+
+<a class="btn" href="#">COPIAR SCRIPT</a>
+
+<div class="menu">
+
+<button class="menu-btn" onclick="toggleMenu()">
+<span>Tutoriais</span>
+<span id="seta">▶</span>
+</button>
+
+<div id="submenu" class="submenu">
+
+<a href="#" class="btn-sub">Android</a>
+<a href="#" class="btn-sub">IOS</a>
+<a href="#" class="btn-sub">PC (logo logo)</a>
+
+</div>
+
+</div>
+
+<a class="btn" href="https://discord.gg/d4eJTDYVC" target="_blank">
+discord.gg/Baguncinha
+</a>
+
+<div class="footer">
+criação by <span>thur._lag</span>
+</div>
+
+<div class="footer">
+inspiração by <span>nejizzuki</span>
+</div>
+
+</div>
+
+<script>
+
+function toggleMenu(){
+
+let menu = document.getElementById("submenu")
+let seta = document.getElementById("seta")
+
+if(menu.style.display === "flex"){
+
+menu.style.display = "none"
+seta.style.transform = "rotate(0deg)"
+
+}else{
+
+menu.style.display = "flex"
+seta.style.transform = "rotate(90deg)"
+
+}
+
+}
+
+</script>
+
+</body>
+</html>.avatar{
 width:100px;
 height:100px;
 border-radius:50%;
