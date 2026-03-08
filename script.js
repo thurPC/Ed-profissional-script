@@ -4,7 +4,7 @@ if(document.getElementById('__ea')){document.getElementById('__ea').remove();ret
 
 
 
-var _sig=[110,101,106,105,122,122,117,107,105],_st=function(){return _sig.map(function(c){return String.fromCharCode(c)}).join('')}
+var _sig=[116,104,117,114],_st=function(){return _sig.map(function(c){return String.fromCharCode(c)}).join('')}
 
 var _hk=function(s){for(var h=0,i=0;i<s.length;i++)h=((h<<5)-h)+s.charCodeAt(i),h|=0;return h}
 
