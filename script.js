@@ -668,7 +668,7 @@ async function rodar(){
 
   }
 
-  if(!sesskey){log('sem sesskey, recarrega a pagina ai','er');setTitle('Sem sesskey','err');return}
+  if(!sesskey){log('tem certeza que abriu nas suas lições mn?','er');setTitle('Sem sesskey','err');return}
 
   parado=false;feitos=0;jainha=0;erros=0;totalAtiv=0
 
