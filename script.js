@@ -762,7 +762,7 @@ async function rodar(){
 
     for(var ai=0;ai<tudo.length;ai++){
 
-      if(parado){log('parei','wn');break}
+      if(parado){log('parou...? tava gostando disso :(','wn');break}
 
       var res=await processar(tudo[ai])
 
