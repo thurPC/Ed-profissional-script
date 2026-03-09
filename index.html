@@ -223,22 +223,13 @@ margin:0 4px;
  
 .coroa{
 display:inline-block;
-animation:girar 5s linear infinite;
+animation:girarLado 3s linear infinite;
+transform-style:preserve-3d;
 }
 
-@keyframes girar{
-0%{transform:rotate(0deg);}
-100%{transform:rotate(360deg);}
-}
- 
-@keyframes girar{
-
-0%{
-transform:rotate(0deg);
-}
-
-100%{
-transform:rotate(360deg);
+@keyframes girarLado{
+0%{transform:rotateY(0deg);}
+100%{transform:rotateY(360deg);}
 }
 
 </style>
