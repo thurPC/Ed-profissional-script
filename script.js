@@ -688,7 +688,7 @@ async function rodar(){
 
     var cursoIds=await pegarCursos()
 
-    if(!cursoIds.length){log('nenhum curso, abre o plano de estudos la','er');setTitle('Sem cursos','err');document.getElementById('__go').disabled=false;return}
+    if(!cursoIds.length){log('nenhum curso, entre em "Minhas disciplinas"','er');setTitle('Sem cursos','err');document.getElementById('__go').disabled=false;return}
 
     log('achei '+cursoIds.length+' cursos: ['+cursoIds.join(',')+']','ok')
 
