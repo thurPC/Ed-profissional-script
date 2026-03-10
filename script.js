@@ -762,8 +762,8 @@ async function rodar(){
 
     for(var ai=0;ai<tudo.length;ai++){
 
-      if(parado){log('parou...? tava gostando disso :( <br><img src="https://i.imgur.com/exKNSeN.jpeg" style="width:80px;margin-top:5px;">','wn');
-                 
+      if(parado){log('parou...? tava gostando disso :(','wn');break}
+
       var res=await processar(tudo[ai])
 
       if(res==='ok'){feitos++;setStat('__so',feitos+jainha)}
