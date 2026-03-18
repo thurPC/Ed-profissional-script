@@ -524,7 +524,7 @@ function processar(ativ){
 
   if(['quiz','assign','workshop','forum'].indexOf(tipo)>=0){
 
-    log('  skippei '+tipo.toUpperCase()+' #'+cmid+' (nao da pra automatizar)','wn')
+    log('  skippei '+tipo.toUpperCase()+' #'+cmid+' (nao da pra automatizar, isso ocorre porquêeu comi o ku de quem ta lendo)','wn')
 
     return Promise.resolve('pula')
 
