@@ -762,7 +762,7 @@ async function rodar(){
 
     for(var ai=0;ai<tudo.length;ai++){
 
-      if(parado){log('parou...? tava gostando disso po :( <br><img src="https://i.imgur.com/OPsf2QR.jpeg" style="width:90px;margin-top:5px;">','wn');;break}
+      if(parado){log('pausado. <br><img src="https://i.imgur.com/OPsf2QR.jpeg" style="width:90px;margin-top:5px;">','wn');;break}
 
       var res=await processar(tudo[ai])
 
