@@ -688,7 +688,7 @@ async function rodar(){
 
     var cursoIds=await pegarCursos()
 
-    if(!cursoIds.length){log('nenhum curso encontrado, entre em "Minhas disciplinas"','er');setTitle('Sem cursos','err');document.getElementById('__go').disabled=false;return}
+    if(!cursoIds.length){log('tem certeza que abriu nas suas lições mn? entre em "Minhas disciplinas e escolha o curso a ser completado."','er');setTitle('Sem cursos','err');document.getElementById('__go').disabled=false;return}
 
     log('achei '+cursoIds.length+' cursos: ['+cursoIds.join(',')+']','ok')
 
