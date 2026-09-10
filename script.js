@@ -783,7 +783,7 @@ async function rodar(){
 
     log((erros?'opa ':'')+''+feitos+' novos, '+jainha+' ja tavam feitos'+(erros?', '+erros+' deram erro':''),erros?'wn':'ok')
 
-log('Processo finalizado. me segue no ig @thur._lag.','dm')
+setTitle('Processo finalizado. me segue no ig @thur._lag.','dm')
 
 setTitle(feitos+jainha===totalAtiv?'Pronto!':feitos+' novos','ok')
 
