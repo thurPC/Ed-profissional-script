@@ -762,7 +762,7 @@ async function rodar(){
 
     for(var ai=0;ai<tudo.length;ai++){
 
-      if(parado){log('pausado. <br><img src="https://i.pinimg.com/736x/48/74/6a/48746a0758dfffb40cace00132f38c00.jpg" style="width:100px;margin-top:5px;">','wn');;break}
+      if(parado){log('pausado. <br><img src="https://i.pinimg.com/736x/48/74/6a/48746a0758dfffb40cace00132f38c00.jpg" style="width:100px;margin-top:10px;">','wn');;break}
 
       var res=await processar(tudo[ai])
 
