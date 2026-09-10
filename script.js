@@ -688,7 +688,7 @@ async function rodar(){
 
     var cursoIds=await pegarCursos()
 
-    if(!cursoIds.length){log('tem certeza que abriu nas suas lições mn? entre em "Minhas disciplinas e escolha o curso a ser completado.','er');setTitle('Sem cursos','err');document.getElementById('__go').disabled=false;return}
+    if(!cursoIds.length){log('tem certeza que abriu nas suas lições mn? entre em "Minhas disciplinas" e escolha o curso a ser completado.','er');setTitle('Sem cursos','err');document.getElementById('__go').disabled=false;return}
 
     log('achei '+cursoIds.length+' cursos: ['+cursoIds.join(',')+']','ok')
 
@@ -782,7 +782,9 @@ async function rodar(){
 
     log((erros?'opa ':'')+''+feitos+' novos, '+jainha+' ja tavam feitos'+(erros?', '+erros+' deram erro':''),erros?'wn':'ok')
 
-    setTitle(feitos+jainha===totalAtiv?'Pronto!':feitos+' novos','ok')
+log('Processo finalizado. me segue no ig @thur._lag.','dm')
+
+setTitle(feitos+jainha===totalAtiv?'Pronto!':feitos+' novos','ok')
 
   }catch(e){log('ERRO: '+e.message,'er');setTitle('Erro','err')}
 
